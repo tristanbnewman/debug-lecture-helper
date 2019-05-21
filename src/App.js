@@ -6,12 +6,13 @@ class App extends Component {
     super(props)
     this.state = {
       result: null,
-      firstNum: null,
-      secondNum: null
+      firstNum: '',
+      secondNum: ''
     }
   }
 
   calculate() {
+    console.log(this.state.firstNum)
     let { firstNum, secondNum } = this.state;
     let sum = firstNum + secondNum;
     this.setState({
@@ -25,12 +26,14 @@ class App extends Component {
   }
 
   calcTotal() {
+    
     let { cost, quantity, taxRate } = this.state;
     let subTotal = cost * quantity;
     let tax = subTotal * taxRate;
     this.setState({
       total: tax + subTotal
     })
+    
   }
 
   render() {
